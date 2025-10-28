@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
+import withPWA from '@ducanh2912/next-pwa'
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const isProd = process.env.NODE_ENV === 'production'
 
-export default nextConfig;
+const config = {
+    dest: 'public',
+}
+
+export default isProd
+    ? withPWA(config)
+    : config
