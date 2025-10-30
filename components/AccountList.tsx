@@ -9,7 +9,7 @@ export default function AccountList() {
     const [activeIndex, setActiveIndex] = useState(0);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-    // 🎯 کنترل اسکرول برای کلیک روی دایره‌ها
+    // scroll control
     const scrollToCard = (index: number) => {
         if (!scrollContainerRef.current) return;
         const container = scrollContainerRef.current;
@@ -20,7 +20,7 @@ export default function AccountList() {
         });
     };
 
-    // 🎯 تشخیص کارت فعال هنگام اسکرول
+    // scroll
     const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
         const scrollLeft = e.currentTarget.scrollLeft;
         const cardWidth = e.currentTarget.clientWidth;
@@ -30,13 +30,13 @@ export default function AccountList() {
 
     return (
         <section className="relative mt-4">
-            {/* کارت‌ها */}
+            {/* cards */}
             <div
                 ref={scrollContainerRef}
                 onScroll={handleScroll}
                 className="
           flex gap-4 overflow-x-auto snap-x snap-mandatory
-          no-scrollbar md:grid md:grid-cols-2 md:gap-6 md:overflow-visible
+          no-scrollbar md:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible
           scroll-smooth
         "
             >

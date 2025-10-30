@@ -18,10 +18,7 @@ export default function RootLayout({
     }, [])
   return (
     <html lang="fa"  >
-
-      <body
-
-      >
+      <body>
         {children}
       </body>
     </html>
