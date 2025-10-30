@@ -1,18 +1,6 @@
 'use client'
-
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {useEffect} from "react";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import React, {useEffect} from "react";
 
 
 
@@ -29,13 +17,10 @@ export default function RootLayout({
         }
     }, [])
   return (
-    <html lang="en">
-    <head>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#0d6efd" />
-    </head>
+    <html lang="fa"  >
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+
       >
         {children}
       </body>
